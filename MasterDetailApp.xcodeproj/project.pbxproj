@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9262B3311863519E0062F39D /* File.m in Sources */ = {isa = PBXBuildFile; fileRef = 9262B3301863519E0062F39D /* File.m */; };
+		9262B335186356F70062F39D /* DisplayUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 9262B334186356F70062F39D /* DisplayUnit.m */; };
 		92CB3B831862F5EE00FDF29C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92CB3B821862F5EE00FDF29C /* Foundation.framework */; };
 		92CB3B851862F5EE00FDF29C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92CB3B841862F5EE00FDF29C /* CoreGraphics.framework */; };
 		92CB3B871862F5EE00FDF29C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92CB3B861862F5EE00FDF29C /* UIKit.framework */; };
@@ -36,6 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9262B32F1863519E0062F39D /* File.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = File.h; sourceTree = "<group>"; };
+		9262B3301863519E0062F39D /* File.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = File.m; sourceTree = "<group>"; };
+		9262B333186356F70062F39D /* DisplayUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayUnit.h; sourceTree = "<group>"; };
+		9262B334186356F70062F39D /* DisplayUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayUnit.m; sourceTree = "<group>"; };
 		92CB3B7F1862F5EE00FDF29C /* MasterDetailApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MasterDetailApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92CB3B821862F5EE00FDF29C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		92CB3B841862F5EE00FDF29C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -84,6 +90,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9262B332186353F60062F39D /* File */ = {
+			isa = PBXGroup;
+			children = (
+				9262B3301863519E0062F39D /* File.m */,
+				9262B32F1863519E0062F39D /* File.h */,
+			);
+			name = File;
+			sourceTree = "<group>";
+		};
+		9262B336186357000062F39D /* DisplayUnit */ = {
+			isa = PBXGroup;
+			children = (
+				9262B333186356F70062F39D /* DisplayUnit.h */,
+				9262B334186356F70062F39D /* DisplayUnit.m */,
+			);
+			name = DisplayUnit;
+			sourceTree = "<group>";
+		};
 		92CB3B761862F5EE00FDF29C = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +151,8 @@
 				92CB3B9E1862F5EE00FDF29C /* DetailViewController.m */,
 				92CB3BA01862F5EE00FDF29C /* Images.xcassets */,
 				92CB3B891862F5EE00FDF29C /* Supporting Files */,
+				9262B332186353F60062F39D /* File */,
+				9262B336186357000062F39D /* DisplayUnit */,
 			);
 			path = MasterDetailApp;
 			sourceTree = "<group>";
@@ -258,9 +284,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9262B3311863519E0062F39D /* File.m in Sources */,
 				92CB3B931862F5EE00FDF29C /* AppDelegate.m in Sources */,
 				92CB3B9C1862F5EE00FDF29C /* MasterViewController.m in Sources */,
 				92CB3B8F1862F5EE00FDF29C /* main.m in Sources */,
+				9262B335186356F70062F39D /* DisplayUnit.m in Sources */,
 				92CB3B9F1862F5EE00FDF29C /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -480,6 +508,7 @@
 				92CB3BB91862F5EE00FDF29C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		92CB3BBA1862F5EE00FDF29C /* Build configuration list for PBXNativeTarget "MasterDetailAppTests" */ = {
 			isa = XCConfigurationList;
@@ -488,6 +517,7 @@
 				92CB3BBC1862F5EE00FDF29C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
