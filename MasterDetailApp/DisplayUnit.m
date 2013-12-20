@@ -10,4 +10,12 @@
 
 @implementation DisplayUnit
 
+@synthesize mainTitleDU = _mainTitleDU;
+@synthesize titleDU = _titleDU;
+@synthesize introDU = _introDU;
+@synthesize bodyDU = _bodyDU;
+@synthesize conclusionDU = _conclusionDU;
+@synthesize dateDU = _dateDU;
+@synthesize parentFile = _parentFile;
+
 @end
