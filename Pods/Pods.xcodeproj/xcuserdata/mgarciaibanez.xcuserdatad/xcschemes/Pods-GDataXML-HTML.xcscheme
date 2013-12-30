@@ -14,9 +14,9 @@
             buildForRunning = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "78160DFA37D841FEB5325BAA"
-               BuildableName = "libPods.a"
-               BlueprintName = "Pods"
+               BlueprintIdentifier = "27BA0A7146BF41339F702232"
+               BuildableName = "libPods-GDataXML-HTML.a"
+               BlueprintName = "Pods-GDataXML-HTML"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

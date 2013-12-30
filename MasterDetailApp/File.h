@@ -15,6 +15,7 @@
 @property (nonatomic, strong) NSString *filenl;//For Tips&Advices ??
 @property (nonatomic, strong) NSString *fileVolume;//For Tips&Advices
 @property (nonatomic, strong) NSString *fileNumber;//For Tips&Advices
+@property (nonatomic, strong) NSString *filePage;//For Tips&Advices
 @property (nonatomic, strong) NSString *fileSubPage;//For Tips&Advices
 @property (nonatomic, strong) NSString *fileTopic;//For Tips&Advices
 @property (nonatomic, strong) NSString *fileKeyword;//For Tips&Advices

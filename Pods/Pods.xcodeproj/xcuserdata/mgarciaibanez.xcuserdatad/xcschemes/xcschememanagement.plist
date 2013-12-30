@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-GDataXML-HTML.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-TBXML.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>36D5A02A381843FC939CA475</key>
+		<key>04B6559680434B60AF46A63C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>741D1CCCA0774029A4609199</key>
+		<key>27BA0A7146BF41339F702232</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>78160DFA37D841FEB5325BAA</key>
 		<dict>
 			<key>primary</key>
 			<true/>

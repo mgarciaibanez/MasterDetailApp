@@ -10,11 +10,17 @@
 
 @implementation File
 
-/*
-Model to handle
- */
+/*Model to handle */
 @synthesize codFile = _codFile;
+@synthesize codFileShort = _codFileShort;
 @synthesize fileType = _fileType;
+@synthesize filenl = _filenl;
+@synthesize fileVolume = _fileVolume;
+@synthesize fileNumber = _fileNumber;
+@synthesize filePage = _filePage;
+@synthesize fileSubPage = _fileSubPage;
+@synthesize fileTopic = _fileTopic;
+@synthesize fileKeyword = _fileKeyword;
 @synthesize fileTypeDescription = _fileTypeDescription;
 @synthesize fileVersion = _fileVersion;
 @synthesize fileVersionTitle = _fileVersionTitle;

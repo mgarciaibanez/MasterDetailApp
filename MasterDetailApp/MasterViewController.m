@@ -7,8 +7,8 @@
 //
 
 #import "MasterViewController.h"
-
 #import "DetailViewController.h"
+#import "XMLController.h"
 
 @interface MasterViewController () {
     NSMutableArray *_objects;
@@ -29,6 +29,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    XMLController *xmlCont =[[XMLController alloc]init];
+    [xmlCont parseFile];
+    NSLog(@"CodFile %@",xmlCont.file.codFile);
 	// Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
