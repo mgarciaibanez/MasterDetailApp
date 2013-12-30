@@ -9,7 +9,6 @@
 #import "DisplayUnit.h"
 
 @implementation DisplayUnit
-
 @synthesize mainTitleDU = _mainTitleDU;
 @synthesize titleDU = _titleDU;
 @synthesize introDU = _introDU;
@@ -17,5 +16,6 @@
 @synthesize conclusionDU = _conclusionDU;
 @synthesize dateDU = _dateDU;
 @synthesize parentFile = _parentFile;
-
+@synthesize nextDU = _nextDU;
+@synthesize prevDU = _prevDU;
 @end

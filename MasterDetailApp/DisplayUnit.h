@@ -10,12 +10,13 @@
 #import "File.h"
 @interface DisplayUnit : NSObject
 
-@property (nonatomic, strong) NSString *mainTitleDU;
-@property (nonatomic, strong) NSString *titleDU;
-@property (nonatomic, strong) NSString *introDU;
-@property (nonatomic, strong) NSString *bodyDU;
-@property (nonatomic, strong) NSString *conclusionDU;
-@property (nonatomic, strong) NSDate *dateDU;
+@property (nonatomic, strong) NSString *mainTitleDU;//Keyword for T&A and id for iM
+@property (nonatomic, strong) NSString *titleDU; //Title for T&A
+@property (nonatomic, strong) NSString *introDU; // For T&A
+@property (nonatomic, strong) NSString *bodyDU; // For Both
+@property (nonatomic, strong) NSString *conclusionDU; // For T&A
+@property (nonatomic, strong) NSDate *dateDU; // For both
 @property (nonatomic, strong) File *parentFile;
-
+@property (nonatomic,strong) NSString *nextDU;// For Both
+@property (nonatomic,strong) NSString *prevDU;// For Both
 @end
