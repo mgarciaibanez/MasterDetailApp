@@ -65,37 +65,42 @@
         NSString *subPageString = [TBXML textForElement:[TBXML childElementNamed:@"subpage" parentElement:newsletterChild]];
         TBXMLElement *elementDate = [TBXML childElementNamed:@"date" parentElement:newsletterChild];
         NSString *dateString = [NSString stringWithFormat:@"%@%@%@",[TBXML valueOfAttributeNamed:@"day" forElement:elementDate],[TBXML valueOfAttributeNamed:@"month" forElement:elementDate],[TBXML valueOfAttributeNamed:@"year" forElement:elementDate]];
-        //Create object and instance it
-        File *file2Set = [[File alloc]init];
-        _file = file2Set;
-        if (shortId) _file.codFileShort = shortId;
-        if (longId) _file.codFile = longId;
-        if (nlString) _file.filenl = nlString;
-        if (volumeString) _file.fileVolume = volumeString;
-        if (numberString) _file.fileNumber = numberString;
-        if (pageString) _file.filePage = pageString;
-        if (subPageString) _file.fileSubPage = subPageString;
         NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
         [dateFormat setDateFormat:@"ddMMyyyy"];
-        if (dateString) _file.fileVersionDate = [dateFormat dateFromString:dateString];
+        NSDate *date2Store = [[NSDate alloc] init];
+        if (dateString) date2Store = [dateFormat dateFromString:dateString];
+        
+        //Check values
+        if (!shortId) shortId = @"";
+        if (!longId) longId = @"";
+        if (!nlString) nlString = @"";
+        if (!volumeString) volumeString = @"";
+        if (!numberString) numberString = @"";
+        if (!pageString) pageString = @"";
+        if (!subPageString) subPageString = @"";
+        
+        //Create object and instance it
+        File *file2Set = [[File alloc]initWithAllData:longId codFileShort:shortId filenl:nlString fileVolume:volumeString fileNumber:numberString filePage:pageString fileSubPage:subPageString fileTopic:@"" fileKeyword:@"" fileType:@"" fileTypeDescription:@"" fileVersion:@"" fileVersionTitle:@"" fileVersionDate:date2Store fileThumbNail:@"" fileCountry:@""];
+        _file = file2Set;
     }
     
     if (contentChild){
         NSString *keywordString = [TBXML textForElement:[TBXML childElementNamed:@"keyword" parentElement:contentChild]];
         NSString *titleString = [TBXML textForElement:[TBXML childElementNamed:@"title" parentElement:contentChild]];
         NSString *path2Document = [[NSBundle mainBundle] pathForResource:@"ApuntesyConsejos1" ofType:@"xml"];
-        NSString *introString = [self formattedTextFromXMLPathAndDocument:@"/article/content/intro/p" documentPath:path2Document];
-        NSString *bodyString = [self formattedTextFromXMLPathAndDocument:@"/article/content/body/p" documentPath:path2Document];
-        NSString *conclusionString = [self formattedTextFromXMLPathAndDocument:@"/article/content/conclusion/p" documentPath:path2Document];
+        NSString *introString = [self notFormattedTextFromXMLPathAndDocument:@"/article/content/intro/p" documentPath:path2Document];
+        NSString *bodyString = [self formattedTextFromXMLPathAndDocument:@"/article/content/body" documentPath:path2Document];
+        NSString *conclusionString = [self formattedTextFromXMLPathAndDocument:@"/article/content/conclusion" documentPath:path2Document];
         
-        DisplayUnit *displayUnit2Set = [[DisplayUnit alloc] init];
+        //Check values
+        if (!keywordString) keywordString = @"";
+        if (!titleString) titleString = @"";
+        if (!introString) introString = @"";
+        if (!bodyString) bodyString = @"";
+        if (!conclusionString) conclusionString = @"";
+        
+        DisplayUnit *displayUnit2Set = [[DisplayUnit alloc] initWithAllData:keywordString titleDU:titleString introDU:introString bodyDU:bodyString conclusionDU:conclusionString dateDU:nil parentFile:_file nextDU:@"" prevDU:@""];
         _displayUnit = displayUnit2Set;
-        if (_file) _displayUnit.parentFile = _file;
-        if (keywordString) _displayUnit.mainTitleDU = keywordString;
-        if (titleString) _displayUnit.titleDU = titleString;
-        if (introString) _displayUnit.introDU = introString;
-        if (bodyString) _displayUnit.bodyDU = bodyString;
-        if (conclusionString) _displayUnit.conclusionDU = conclusionString;
     }
 }
 
@@ -109,6 +114,17 @@
     GDataXMLDocument *doc = [[GDataXMLDocument alloc] initWithData:[[NSMutableData alloc] initWithContentsOfFile:documentPath] error:&error];
     
     result = [(GDataXMLNode *)[self nodeForXpath:xpath inDocument:doc] XMLString];
+    return result;
+}
+
+//Function to return plain formatted text from a document and xPath sent as parameters
+-(NSString *)notFormattedTextFromXMLPathAndDocument:(NSString *)xpath documentPath:(NSString *)documentPath{
+    NSString *result;
+    //Load document to get html string
+    NSError *error;
+    GDataXMLDocument *doc = [[GDataXMLDocument alloc] initWithData:[[NSMutableData alloc] initWithContentsOfFile:documentPath] error:&error];
+    
+    result = [(GDataXMLNode *)[self nodeForXpath:xpath inDocument:doc] stringValue];
     return result;
 }
 

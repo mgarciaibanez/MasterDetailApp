@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MasterViewController.h"
+#import "DisplayUnit.h"
 
-@interface DetailViewController : UIViewController <UISplitViewControllerDelegate>
+@interface DetailViewController : UIViewController <UISplitViewControllerDelegate, DisplayUnitDelegate>
+{
+    
+}
+@property (strong, nonatomic) DisplayUnit *detailItem;
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
 
-@property (strong, nonatomic) id detailItem;
-
-@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 @end

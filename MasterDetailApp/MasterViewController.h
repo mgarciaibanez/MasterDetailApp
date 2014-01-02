@@ -7,11 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "XMLController.h"
 
 @class DetailViewController;
+
+@protocol  DisplayUnitDelegate <NSObject>
+
+@end
 
 @interface MasterViewController : UITableViewController
 
 @property (strong, nonatomic) DetailViewController *detailViewController;
 
+@property (strong) NSMutableArray *tipsAndAdvices;
+@property (strong) XMLController *xmlCont;
+
+
+//ADD this line
+@property (strong, nonatomic) DetailViewController *mainDetailViewController;
+
+@property (nonatomic,retain) id<DisplayUnitDelegate> delegate;
 @end

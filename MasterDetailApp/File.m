@@ -28,4 +28,28 @@
 @synthesize fileVersionDate = _fileVersionDate;
 @synthesize fileVersionFile = _fileVersionFile;
 
+-(id) initWithAllData:(NSString *)codFile codFileShort:(NSString *)codFileShort filenl:(NSString *)filenl fileVolume:(NSString *)fileVolume fileNumber:(NSString *)fileNumber filePage:(NSString *)filePage fileSubPage:(NSString *)fileSubPage fileTopic:(NSString *)fileTopic fileKeyword:(NSString *)fileKeyword fileType:(NSNumber *)fileType fileTypeDescription:(NSString *)fileTypeDescription fileVersion:(NSString *)fileVersion fileVersionTitle:(NSString *)fileVersionTitle fileVersionDate:(NSDate *)fileVersionDate fileThumbNail:(NSString *)fileThumbNail fileCountry:(NSString *)fileCountry{
+    
+    if ((self = [super init])){
+        self.codFile = codFile;
+        self.codFileShort = codFileShort;
+        self.filenl = filenl;
+        self.fileVolume = fileVolume;
+        self.fileNumber = fileNumber;
+        self.filePage = filePage;
+        self.fileSubPage = fileSubPage;
+        self.fileTopic = fileTopic;
+        self.fileKeyword = fileKeyword;
+        self.fileType = fileType;
+        self.fileTypeDescription = fileTypeDescription;
+        self.fileVersion = fileVersion;
+        self.fileVersionTitle = fileVersionTitle;
+        self.fileVersionDate = fileVersionDate;
+        self.fileThumbNail = fileThumbNail;
+        self.fileCountry = fileCountry;
+    }
+    
+    return self;
+}
+
 @end

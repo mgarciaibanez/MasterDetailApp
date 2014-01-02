@@ -28,4 +28,6 @@
 @property (nonatomic, strong) NSString *fileVersionFile;
 @property (nonatomic, strong) NSString *fileCountry;
 
+-(id) initWithAllData:(NSString *)codFile codFileShort:(NSString *)codFileShort filenl:(NSString *)filenl fileVolume:(NSString *)fileVolume fileNumber:(NSString *)fileNumber filePage:(NSString *)filePage fileSubPage:(NSString *)fileSubPage fileTopic:(NSString *)fileTopic fileKeyword:(NSString *)fileKeyword fileType:(NSString *)fileType fileTypeDescription:(NSString *)fileTypeDescription fileVersion:(NSString *)fileVersion fileVersionTitle:(NSString *)fileVersionTitle fileVersionDate:(NSDate *)fileVersionDate fileThumbNail:(NSString *)fileThumbNail fileCountry:(NSString *)fileCountry;
+
 @end

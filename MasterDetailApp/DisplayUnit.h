@@ -19,4 +19,6 @@
 @property (nonatomic, strong) File *parentFile;
 @property (nonatomic,strong) NSString *nextDU;// For Both
 @property (nonatomic,strong) NSString *prevDU;// For Both
+
+-(id) initWithAllData:(NSString *)maintTitleDU titleDU:(NSString *)titleDU introDU:(NSString *)introDU bodyDU:(NSString *)bodyDU conclusionDU:(NSString *)conclusionDU dateDU:(NSDate *)dateDU parentFile:(File *)parentFile nextDU:(NSString *)nextDU prevDU:(NSString *)prevDU;
 @end

@@ -7,16 +7,37 @@
 //
 
 #import "AppDelegate.h"
+#import "MasterViewController.h"
+#import "DetailViewController.h"
+#import "XMLController.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    XMLController *xmlCont = [[XMLController alloc] init];
+    [xmlCont parseFile];
     // Override point for customization after application launch.
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
         UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
         splitViewController.delegate = (id)navigationController.topViewController;
+        
+        
+        DetailViewController *detail = (DetailViewController *) navigationController.topViewController;
+        UINavigationController *masterNavigationController = [splitViewController.viewControllers objectAtIndex:0];
+        
+        MasterViewController *masterViewContoller = (MasterViewController *) masterNavigationController.topViewController;
+        
+        masterViewContoller.tipsAndAdvices = [NSMutableArray arrayWithObjects: xmlCont.displayUnit, nil];
+        masterViewContoller.detailViewController = detail;
+        masterViewContoller.delegate = detail;
+    }
+    else{
+        UINavigationController *navController = (UINavigationController *) self.window.rootViewController;
+        MasterViewController *masterViewContoller = [navController.viewControllers objectAtIndex:0];
+        masterViewContoller.tipsAndAdvices =  [NSMutableArray arrayWithObjects: xmlCont.displayUnit, nil];
     }
     return YES;
 }

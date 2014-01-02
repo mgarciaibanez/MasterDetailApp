@@ -11,6 +11,7 @@
 		923932161871D7AD00676300 /* XMLController.m in Sources */ = {isa = PBXBuildFile; fileRef = 923932151871D7AD00676300 /* XMLController.m */; };
 		9262B3311863519E0062F39D /* File.m in Sources */ = {isa = PBXBuildFile; fileRef = 9262B3301863519E0062F39D /* File.m */; };
 		9262B335186356F70062F39D /* DisplayUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 9262B334186356F70062F39D /* DisplayUnit.m */; };
+		92B14F4B1875B82E005027D5 /* TipCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B14F4A1875B82E005027D5 /* TipCell.m */; };
 		92CB3B831862F5EE00FDF29C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92CB3B821862F5EE00FDF29C /* Foundation.framework */; };
 		92CB3B851862F5EE00FDF29C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92CB3B841862F5EE00FDF29C /* CoreGraphics.framework */; };
 		92CB3B871862F5EE00FDF29C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92CB3B861862F5EE00FDF29C /* UIKit.framework */; };
@@ -49,6 +50,8 @@
 		9262B3301863519E0062F39D /* File.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = File.m; sourceTree = "<group>"; };
 		9262B333186356F70062F39D /* DisplayUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayUnit.h; sourceTree = "<group>"; };
 		9262B334186356F70062F39D /* DisplayUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayUnit.m; sourceTree = "<group>"; };
+		92B14F491875B82E005027D5 /* TipCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipCell.h; sourceTree = "<group>"; };
+		92B14F4A1875B82E005027D5 /* TipCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipCell.m; sourceTree = "<group>"; };
 		92CB3B7F1862F5EE00FDF29C /* MasterDetailApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MasterDetailApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92CB3B821862F5EE00FDF29C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		92CB3B841862F5EE00FDF29C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -135,6 +138,24 @@
 			name = DisplayUnit;
 			sourceTree = "<group>";
 		};
+		92B14F4718755681005027D5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9262B336186357000062F39D /* DisplayUnit */,
+				9262B332186353F60062F39D /* File */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		92B14F4C1875B833005027D5 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				92B14F491875B82E005027D5 /* TipCell.h */,
+				92B14F4A1875B82E005027D5 /* TipCell.m */,
+			);
+			name = CustomCells;
+			sourceTree = "<group>";
+		};
 		92CB3B761862F5EE00FDF29C = {
 			isa = PBXGroup;
 			children = (
@@ -175,8 +196,7 @@
 				92CB3B921862F5EE00FDF29C /* AppDelegate.m */,
 				92CB3B9D1862F5EE00FDF29C /* DetailViewController.h */,
 				92CB3B9E1862F5EE00FDF29C /* DetailViewController.m */,
-				9262B336186357000062F39D /* DisplayUnit */,
-				9262B332186353F60062F39D /* File */,
+				92B14F4718755681005027D5 /* Model */,
 				92CB3BA01862F5EE00FDF29C /* Images.xcassets */,
 				92CB3B971862F5EE00FDF29C /* Main_iPad.storyboard */,
 				92CB3B941862F5EE00FDF29C /* Main_iPhone.storyboard */,
@@ -184,6 +204,7 @@
 				92CB3B9B1862F5EE00FDF29C /* MasterViewController.m */,
 				92CB3B891862F5EE00FDF29C /* Supporting Files */,
 				923932171871D7B400676300 /* XMLController */,
+				92B14F4C1875B833005027D5 /* CustomCells */,
 			);
 			path = MasterDetailApp;
 			sourceTree = "<group>";
@@ -352,6 +373,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9262B3311863519E0062F39D /* File.m in Sources */,
+				92B14F4B1875B82E005027D5 /* TipCell.m in Sources */,
 				92CB3B931862F5EE00FDF29C /* AppDelegate.m in Sources */,
 				92CB3B9C1862F5EE00FDF29C /* MasterViewController.m in Sources */,
 				92CB3B8F1862F5EE00FDF29C /* main.m in Sources */,
