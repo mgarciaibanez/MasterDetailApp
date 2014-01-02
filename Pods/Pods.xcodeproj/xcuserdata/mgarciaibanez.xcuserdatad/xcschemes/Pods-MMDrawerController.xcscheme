@@ -14,10 +14,10 @@
             buildForProfiling = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintName = "Pods-TBXML"
-               BlueprintIdentifier = "C227152AB19D482882374B14"
+               BlueprintName = "Pods-MMDrawerController"
+               BlueprintIdentifier = "C67CBD1315554E64B3CEAD7F"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "libPods-TBXML.a">
+               BuildableName = "libPods-MMDrawerController.a">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

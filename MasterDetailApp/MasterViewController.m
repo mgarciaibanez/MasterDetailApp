@@ -71,7 +71,7 @@
     DisplayUnit *displayUnit = self.tipsAndAdvices[indexPath.row];
     cell.titleLabel.text = displayUnit.titleDU;
     cell.introLabel.text = displayUnit.introDU;
-    cell.keywordLabel.transform = CGAffineTransformMakeRotation(M_PI/2);//To rotate the text 90 degrees
+    cell.keywordLabel.transform = CGAffineTransformMakeRotation(-M_PI/2);//To rotate the text 90 degrees
     cell.keywordLabel.text = displayUnit.mainTitleDU;
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"dd/MM/yyyy"];

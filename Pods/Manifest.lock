@@ -1,13 +1,27 @@
 PODS:
   - GDataXML-HTML (1.1.0)
+  - MMDrawerController (0.4.0):
+    - MMDrawerController/Core
+    - MMDrawerController/MMDrawerBarButtonItem
+    - MMDrawerController/MMDrawerVisualStates
+    - MMDrawerController/Subclass
+  - MMDrawerController/Core (0.4.0)
+  - MMDrawerController/MMDrawerBarButtonItem (0.4.0):
+    - MMDrawerController/Core
+  - MMDrawerController/MMDrawerVisualStates (0.4.0):
+    - MMDrawerController/Core
+  - MMDrawerController/Subclass (0.4.0):
+    - MMDrawerController/Core
   - TBXML (1.5)
 
 DEPENDENCIES:
   - GDataXML-HTML
+  - MMDrawerController (~> 0.4.0)
   - TBXML
 
 SPEC CHECKSUMS:
   GDataXML-HTML: 281ea772a286241f860fa152cff5c7a7cd817336
+  MMDrawerController: 44baaee6b79487b4681eb61597fb790586909c0c
   TBXML: 0511ac325d83e59d3aefa4bc8cd6cbeff07a8d9e
 
 COCOAPODS: 0.28.0
