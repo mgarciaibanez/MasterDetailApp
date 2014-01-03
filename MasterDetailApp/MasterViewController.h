@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "XMLController.h"
+#import "TipCell.h"
 
 @class DetailViewController;
 
@@ -15,7 +16,7 @@
 
 @end
 
-@interface MasterViewController : UITableViewController
+@interface MasterViewController : UITableViewController <TipCellDelegate>
 
 @property (strong, nonatomic) DetailViewController *detailViewController;
 

@@ -20,17 +20,20 @@
     [xmlCont parseFile];
     // Override point for customization after application launch.
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        //SplitViewController
         UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
+        //Navigation Controller from splitViewController
         UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
         splitViewController.delegate = (id)navigationController.topViewController;
         
-        
+        //Set up detailViewController
         DetailViewController *detail = (DetailViewController *) navigationController.topViewController;
+        //Set up master Navigation Controller
         UINavigationController *masterNavigationController = [splitViewController.viewControllers objectAtIndex:0];
-        
+        //MasterView controller from masterNavigationController
         MasterViewController *masterViewContoller = (MasterViewController *) masterNavigationController.topViewController;
-        
         masterViewContoller.tipsAndAdvices = [NSMutableArray arrayWithObjects: xmlCont.displayUnit, nil];
+        //Set Detail from navigationcontroller
         masterViewContoller.detailViewController = detail;
         masterViewContoller.delegate = detail;
     }

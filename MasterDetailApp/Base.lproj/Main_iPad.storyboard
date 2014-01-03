@@ -80,7 +80,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="crY-Wg-V5e">
-                                            <rect key="frame" x="75" y="7" width="150" height="21"/>
+                                            <rect key="frame" x="65" y="7" width="160" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -93,23 +93,9 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INTRO" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sA4-MJ-WqA">
-                                            <rect key="frame" x="75" y="36" width="240" height="63"/>
+                                            <rect key="frame" x="65" y="36" width="240" height="65"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="8"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nfq-Ef-wy5">
-                                            <rect key="frame" x="5" y="7" width="64" height="84"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <attributedString key="attributedText">
-                                                <fragment content="Keyword">
-                                                    <attributes>
-                                                        <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                        <font key="NSFont" size="10" name="HelveticaNeue"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -118,7 +104,6 @@
                                 <connections>
                                     <outlet property="dateLabel" destination="cI8-1a-oR0" id="zzo-W5-0in"/>
                                     <outlet property="introLabel" destination="sA4-MJ-WqA" id="SHR-WU-3LK"/>
-                                    <outlet property="keywordLabel" destination="nfq-Ef-wy5" id="Rd0-b2-owD"/>
                                     <outlet property="titleLabel" destination="crY-Wg-V5e" id="0Kg-CF-Qt6"/>
                                 </connections>
                             </tableViewCell>
@@ -138,7 +123,6 @@
         <!--Navigation Controller-->
         <scene sceneID="r7l-gg-dq7">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SLD-UC-DBI" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="vC3-pB-5Vb" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="DjV-YW-jjY">
                         <autoresizingMask key="autoresizingMask"/>
@@ -147,6 +131,7 @@
                         <segue destination="JEX-9P-axG" kind="relationship" relationship="rootViewController" id="GKi-kA-LjT"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SLD-UC-DBI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="530" y="764"/>
         </scene>

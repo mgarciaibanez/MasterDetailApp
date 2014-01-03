@@ -10,6 +10,8 @@
 #import "DetailViewController.h"
 #import "DisplayUnit.h"
 #import "TipCell.h"
+#import "MMDrawerController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface MasterViewController () {
     NSMutableArray *_objects;
@@ -40,7 +42,12 @@
 	// Do any additional setup after loading the view, typically from a nib.
     if (self.splitViewController)//We are in ipad
         self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
-    
+    //Here set up Slide controller
+//    UIViewController *leftDrawer = [[UIViewController alloc] init];
+//    MMDrawerController * drawerController = [[MMDrawerController alloc]
+//                                             initWithCenterViewController:self
+//                                             leftDrawerViewController:leftDrawer
+//                                             rightDrawerViewController:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -63,22 +70,10 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *cellId = @"MyBasicCell";
-    TipCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId forIndexPath:indexPath];
-    
-    
-    
-    DisplayUnit *displayUnit = self.tipsAndAdvices[indexPath.row];
-    cell.titleLabel.text = displayUnit.titleDU;
-    cell.introLabel.text = displayUnit.introDU;
-    cell.keywordLabel.transform = CGAffineTransformMakeRotation(-M_PI/2);//To rotate the text 90 degrees
-    cell.keywordLabel.text = displayUnit.mainTitleDU;
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"dd/MM/yyyy"];
-    cell.dateLabel.text = [dateFormatter stringFromDate:displayUnit.dateDU];
+    //UITableViewCell *cell = [self testingReturnCustomizablecell:tableView cellForRowAtIndexPath:indexPath];
+    UITableViewCell *cell = [[[TipCell alloc] init] customizeCell:tableView cellForRowAtIndexPath:indexPath data2Store:self.tipsAndAdvices];
     return cell;
 }
-
 
 #pragma mark - UITableViewDelegate
 
@@ -113,4 +108,57 @@
     }
 }
 
+#pragma - mark TipcellDelegate
+-(void) keywordButtonTap:(id)sender{
+    NSLog(@"Button Tapped");
+}
+
 @end
+
+
+/*
+ customizable cells moved to TipCell
+ 
+ - (UITableViewCell *)testingReturnCustomizablecell: (UITableView *) tableView cellForRowAtIndexPath:(NSIndexPath *) indexPath{
+ static NSString *cellId = @"MyBasicCell";
+ TipCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId forIndexPath:indexPath];
+ DisplayUnit *displayUnit = self.tipsAndAdvices[indexPath.row];
+ cell = [self customizeCell:cell displayUnit:displayUnit];
+ return cell;
+ }
+ 
+ #pragma mark - Customize cell
+ - (TipCell *) customizeCell:(TipCell *) cell displayUnit:(DisplayUnit *)displayUnit{
+ TipCell *result = cell;
+ 
+ //TitleLabel
+ result.titleLabel.text = displayUnit.titleDU;
+ //IntroLabel
+ result.introLabel.text = displayUnit.introDU;
+ 
+ //Keyword Button
+ UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+ [button addTarget:self action:@selector(aMethod:) forControlEvents:UIControlEventTouchDown];
+ [button setTitle:displayUnit.mainTitleDU forState:UIControlStateNormal];
+ button.frame = CGRectMake(-20,20,100,60);
+ [[button layer] setBorderWidth:2.0f];
+ [[button layer] setBorderColor:[UIColor blackColor].CGColor];
+ [button.titleLabel setTextAlignment:NSTextAlignmentCenter];
+ button.titleLabel.baselineAdjustment = UIBaselineAdjustmentAlignCenters;
+ button.titleLabel.adjustsFontSizeToFitWidth = YES;
+ button.transform = CGAffineTransformMakeRotation(-M_PI/2);
+ [result addSubview:button];
+ //End of keyword Button
+ 
+ NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+ [dateFormatter setDateFormat:@"dd/MM/yyyy"];
+ result.dateLabel.text = [dateFormatter stringFromDate:displayUnit.dateDU];
+ 
+ return result;
+ }
+ 
+ #pragma mark - button action
+ -(void)aMethod:(id)sender{
+ NSLog(@"button tapped");
+ }
+ */
