@@ -7,17 +7,17 @@
       buildImplicitDependencies = "YES">
       <BuildActionEntries>
          <BuildActionEntry
-            buildForAnalyzing = "YES"
             buildForArchiving = "YES"
-            buildForRunning = "YES"
+            buildForProfiling = "YES"
             buildForTesting = "YES"
-            buildForProfiling = "YES">
+            buildForAnalyzing = "YES"
+            buildForRunning = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D8DA33C500774FB1AB675196"
                BlueprintName = "Pods"
-               BlueprintIdentifier = "172954392E734C059A58D5EA"
-               ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "libPods.a">
+               BuildableName = "libPods.a"
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -31,29 +31,29 @@
       </Testables>
    </TestAction>
    <LaunchAction
+      debugDocumentVersioning = "YES"
       ignoresPersistentStateOnLaunch = "NO"
       launchStyle = "0"
       allowLocationSimulation = "YES"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       buildConfiguration = "Debug"
-      debugDocumentVersioning = "YES"
       useCustomWorkingDirectory = "NO">
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       shouldUseLaunchSchemeArgsEnv = "YES"
+      debugDocumentVersioning = "YES"
       savedToolIdentifier = ""
       buildConfiguration = "Release"
-      debugDocumentVersioning = "YES"
       useCustomWorkingDirectory = "NO">
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "Release"
-      revealArchiveInOrganizer = "YES">
+      revealArchiveInOrganizer = "YES"
+      buildConfiguration = "Release">
    </ArchiveAction>
 </Scheme>

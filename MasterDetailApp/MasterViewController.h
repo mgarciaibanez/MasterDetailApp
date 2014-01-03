@@ -19,13 +19,11 @@
 @interface MasterViewController : UITableViewController <TipCellDelegate>
 
 @property (strong, nonatomic) DetailViewController *detailViewController;
-
 @property (strong) NSMutableArray *tipsAndAdvices;
 @property (strong) XMLController *xmlCont;
 
 
 //ADD this line
 @property (strong, nonatomic) DetailViewController *mainDetailViewController;
-
 @property (nonatomic,retain) id<DisplayUnitDelegate> delegate;
 @end

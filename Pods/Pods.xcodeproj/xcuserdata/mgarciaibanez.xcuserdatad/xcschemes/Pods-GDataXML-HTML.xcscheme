@@ -7,17 +7,17 @@
       buildImplicitDependencies = "YES">
       <BuildActionEntries>
          <BuildActionEntry
-            buildForAnalyzing = "YES"
             buildForArchiving = "YES"
-            buildForRunning = "YES"
+            buildForProfiling = "YES"
             buildForTesting = "YES"
-            buildForProfiling = "YES">
+            buildForAnalyzing = "YES"
+            buildForRunning = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "0F83DDF854A34BCE8DC6B5A9"
                BlueprintName = "Pods-GDataXML-HTML"
-               BlueprintIdentifier = "4D4375E1EE024C2CA1F25BBA"
-               ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "libPods-GDataXML-HTML.a">
+               BuildableName = "libPods-GDataXML-HTML.a"
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -31,29 +31,29 @@
       </Testables>
    </TestAction>
    <LaunchAction
+      debugDocumentVersioning = "YES"
       ignoresPersistentStateOnLaunch = "NO"
       launchStyle = "0"
       allowLocationSimulation = "YES"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       buildConfiguration = "Debug"
-      debugDocumentVersioning = "YES"
       useCustomWorkingDirectory = "NO">
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       shouldUseLaunchSchemeArgsEnv = "YES"
+      debugDocumentVersioning = "YES"
       savedToolIdentifier = ""
       buildConfiguration = "Release"
-      debugDocumentVersioning = "YES"
       useCustomWorkingDirectory = "NO">
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "Release"
-      revealArchiveInOrganizer = "YES">
+      revealArchiveInOrganizer = "YES"
+      buildConfiguration = "Release">
    </ArchiveAction>
 </Scheme>
