@@ -7,23 +7,23 @@
 //
 
 #import "AppDelegate.h"
-#import "MasterViewController.h"
-#import "DetailViewController.h"
-#import "XMLController.h"
+//#import "MasterViewController.h"
+//#import "DetailViewController.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    
+    /*
     XMLController *xmlCont = [[XMLController alloc] init];
     [xmlCont parseFile];
     // Override point for customization after application launch.
+    UINavigationController *navigationController;
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         //SplitViewController
         UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
         //Navigation Controller from splitViewController
-        UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
+        navigationController = [splitViewController.viewControllers lastObject];
         splitViewController.delegate = (id)navigationController.topViewController;
         
         //Set up detailViewController
@@ -38,10 +38,23 @@
         masterViewContoller.delegate = detail;
     }
     else{
-        UINavigationController *navController = (UINavigationController *) self.window.rootViewController;
-        MasterViewController *masterViewContoller = [navController.viewControllers objectAtIndex:0];
+        navigationController = (UINavigationController *) self.window.rootViewController;
+        MasterViewController *masterViewContoller = [navigationController.viewControllers objectAtIndex:0];
         masterViewContoller.tipsAndAdvices =  [NSMutableArray arrayWithObjects: xmlCont.displayUnit, nil];
     }
+    
+    //Instantiate
+    self.revealController = [PKRevealController revealControllerWithFrontViewController:navigationController leftViewController:[self leftViewController]];
+    
+    //Configure
+    self.revealController.delegate = self;
+    self.revealController.animationDuration = 0.25;
+    
+    //Apply
+    navigationController = (UINavigationController *) self.revealController;
+    
+    //Try to configure pkrevealing
+     */
     return YES;
 }
 							

@@ -120,6 +120,24 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
+		923D3680187BFEA400D61956 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				92CB3B9D1862F5EE00FDF29C /* DetailViewController.h */,
+				92CB3B9E1862F5EE00FDF29C /* DetailViewController.m */,
+			);
+			name = Detail;
+			sourceTree = "<group>";
+		};
+		923D3681187BFEAE00D61956 /* Master */ = {
+			isa = PBXGroup;
+			children = (
+				92CB3B9A1862F5EE00FDF29C /* MasterViewController.h */,
+				92CB3B9B1862F5EE00FDF29C /* MasterViewController.m */,
+			);
+			name = Master;
+			sourceTree = "<group>";
+		};
 		9262B332186353F60062F39D /* File */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,16 +210,12 @@
 		92CB3B881862F5EE00FDF29C /* MasterDetailApp */ = {
 			isa = PBXGroup;
 			children = (
-				92CB3B911862F5EE00FDF29C /* AppDelegate.h */,
-				92CB3B921862F5EE00FDF29C /* AppDelegate.m */,
-				92CB3B9D1862F5EE00FDF29C /* DetailViewController.h */,
-				92CB3B9E1862F5EE00FDF29C /* DetailViewController.m */,
+				923D3680187BFEA400D61956 /* Detail */,
 				92B14F4718755681005027D5 /* Model */,
 				92CB3BA01862F5EE00FDF29C /* Images.xcassets */,
 				92CB3B971862F5EE00FDF29C /* Main_iPad.storyboard */,
 				92CB3B941862F5EE00FDF29C /* Main_iPhone.storyboard */,
-				92CB3B9A1862F5EE00FDF29C /* MasterViewController.h */,
-				92CB3B9B1862F5EE00FDF29C /* MasterViewController.m */,
+				923D3681187BFEAE00D61956 /* Master */,
 				92CB3B891862F5EE00FDF29C /* Supporting Files */,
 				923932171871D7B400676300 /* XMLController */,
 				92B14F4C1875B833005027D5 /* CustomCells */,
@@ -212,6 +226,8 @@
 		92CB3B891862F5EE00FDF29C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				92CB3B911862F5EE00FDF29C /* AppDelegate.h */,
+				92CB3B921862F5EE00FDF29C /* AppDelegate.m */,
 				92CB3B8A1862F5EE00FDF29C /* MasterDetailApp-Info.plist */,
 				92CB3B8B1862F5EE00FDF29C /* InfoPlist.strings */,
 				92CB3B8E1862F5EE00FDF29C /* main.m */,

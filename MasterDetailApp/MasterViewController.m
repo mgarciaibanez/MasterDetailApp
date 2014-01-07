@@ -10,22 +10,29 @@
 #import "DetailViewController.h"
 #import "DisplayUnit.h"
 #import "TipCell.h"
+#import "XMLController.h"
 #import <QuartzCore/QuartzCore.h>
 
-@interface MasterViewController ()
+@interface MasterViewController () <UISplitViewControllerDelegate>
 
 @end
 
 @implementation MasterViewController
 @synthesize tipsAndAdvices = _tipsAndAdvices;
 @synthesize xmlCont = _xmlCont;
+
+-(void) setTipsAndAdvices:(NSMutableArray *)tipsAndAdvices{
+    _tipsAndAdvices = tipsAndAdvices;
+    [self.tableView reloadData];
+}
+
 - (void)awakeFromNib
 {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         self.clearsSelectionOnViewWillAppear = NO;
         self.preferredContentSize = CGSizeMake(320.0, 600.0);
     }
-    
+    self.splitViewController.delegate = self;
     [super awakeFromNib];
 }
 
@@ -34,13 +41,19 @@
  [self.tableView reloadData];
  */
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [_xmlCont parseFile];
+    XMLController *xmlCont = [[XMLController alloc] init];
+    [xmlCont parseFile];
+#warning it will change when it will depend on what the user download
+    self.tipsAndAdvices = [NSMutableArray arrayWithObjects: xmlCont.displayUnit, nil];
 	// Do any additional setup after loading the view, typically from a nib.
-    if (self.splitViewController)//We are in ipad
+    
+    /*if (self.splitViewController)//We are in ipad
         self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+     */
     //Here set up Slide controller
 //    UIViewController *leftDrawer = [[UIViewController alloc] init];
 //    MMDrawerController * drawerController = [[MMDrawerController alloc]
@@ -73,10 +86,24 @@
     return cell;
 }
 
+- (NSString *) titleForRow:(NSUInteger) row{
+    return [self.tipsAndAdvices[row] mainTitleDU];
+}
+
+#pragma mark - UISplitViewControllerDelegate
+- (BOOL)splitViewController:(UISplitViewController *)svc
+   shouldHideViewController:(UIViewController *)vc
+              inOrientation:(UIInterfaceOrientation)orientation
+{
+    return YES;
+}
+
+
 #pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    /*
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         UINavigationController *detailNavigationController = self.splitViewController.viewControllers[1];
         id detail = detailNavigationController.topViewController;
@@ -85,6 +112,7 @@
             [self.detailViewController setDetailItem:displayUnit];
         }
     }
+     */
 }
 
 #pragma mark - Navigation
@@ -99,7 +127,7 @@
                     DisplayUnit *displayUnit = _tipsAndAdvices[indexPath.row];
                     //TO SET THE BACK BUTTON TITLE NO EMPTY
                     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
-                    [[segue destinationViewController] setDetailItem:displayUnit];
+                    [segue.destinationViewController setDetailItem:displayUnit];
                 }
             }
         }

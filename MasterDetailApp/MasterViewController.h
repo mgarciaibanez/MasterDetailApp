@@ -19,7 +19,7 @@
 @interface MasterViewController : UITableViewController <TipCellDelegate>
 
 @property (strong, nonatomic) DetailViewController *detailViewController;
-@property (strong) NSMutableArray *tipsAndAdvices;
+@property (strong, nonatomic) NSMutableArray *tipsAndAdvices;
 @property (strong) XMLController *xmlCont;
 
 
